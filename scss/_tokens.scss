@@ -1,0 +1,31 @@
+/* colors */
+$color-white: #ffffff;
+$color-grey-900: #48556a;
+$color-grey-500: #6e8098;
+$color-grey-400: #9daec2;
+$color-grey-200: #ecf2f8;
+
+/* fonts */
+$font-manrope: 'Manrope', sans-serif;
+$fw-bold: 700;
+$fw-medium: 500;
+
+/* spacing */
+$space-0: 0;
+$space-200: 1rem;
+$space-300: 1.5rem;
+$space-400: 2rem;
+$space-500: 2.5rem;
+$space-600: 3rem;
+$space-700: 3.5rem;
+$space-800: 4rem;
+$space-1300: 6.5rem;
+$space-2000: 10rem;
+
+/* breakpoints */
+$bp-sm: 23.4375rem;
+$bp-md: 48rem;
+$bp-lg: 64rem;
+$bp-xl: 90rem;
+
+$content-max-width: $bp-xl;

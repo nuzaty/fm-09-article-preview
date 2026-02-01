@@ -1,0 +1,28 @@
+@use 'tokens' as *;
+@use 'media' as *;
+
+@mixin text-preset($family, $size, $weight, $line-height, $letter-spacing: null) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+.text-preset- {
+  &1 {
+    @include text-preset($font-manrope, 1.25rem, $fw-bold, 1.3, 0.0125em);
+  }
+  &2-medium {
+    @include text-preset($font-manrope, 0.8125rem, $fw-medium, 1.4, 0.0012em);
+  }
+  &2-bold {
+    @include text-preset($font-manrope, 0.8125rem, $fw-bold, 1.4, 0.0012em);
+  }
+  &3 {
+    @include text-preset($font-manrope, 0.8125rem, $fw-medium, 1.4, 0.25em);
+  }
+}

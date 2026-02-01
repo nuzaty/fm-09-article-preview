@@ -1,36 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./dist/styles.css">
+  <script defer src="./main.js"></script>
   <title>Frontend Mentor | Article preview component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <main>
+    <article class="article">
+      <header class="article__header">
+        <img class="article__image" src="./images/drawers.jpg" alt="Drawers">
+      </header>
+      <section class="article__content">
+        <h3 class="article__title">
+          Shift the overall look and feel by adding these wonderful
+          touches to furniture in your home
+        </h3>
+        <p class="article__description">
+          Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I’ve got some simple tips
+          to help you make any room feel complete.
+        </p>
+      </section>
+      <footer class="article__footer">
+        <div class="article__byline">
+          <img class="article__byline-avatar" src="./images/avatar-michelle.jpg" alt="Michelle avatar">
+          <div class="article__byline-meta">
+            <span class="article__byline-author">Michelle Appleton</span>
+            <time class="article__byline-date" datetime="2020-06-28">28 Jun 2020</time>
+          </div>
+          <button class="article__byline-share-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 13">
+              <path fill="currentColor"
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+            </svg>
+          </button>
+        </div>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+        <!-- Mobile -->
+        <div class="share share--inline is-hidden">
+          <span class="share__label">Share</span>
+          <ul class="share__list">
+            <li class="share__item">
+              <a class="share__link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/"><img
+                  src="./images/icon-facebook.svg" alt="Facebook icon">
+              </a>
+            </li>
+            <li class="share__item">
+              <a class="share__link" target="_blank" rel="noopener noreferrer" href="https://x.com/"><img
+                  src="./images/icon-twitter.svg" alt="Twitter icon">
+              </a>
+            </li>
+            <li class="share__item">
+              <a class="share__link" target="_blank" rel="noopener noreferrer" href="https://www.pinterest.com/"><img
+                  src="./images/icon-pinterest.svg" alt="Pinterest icon">
+              </a>
+            </li>
+          </ul>
+          <button class="article__byline-share-btn is-active" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 13">
+              <path fill="currentColor"
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+            </svg>
+          </button>
+        </div>
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <!-- Desktop TODO -->
+        <div class="popover is-hidden">
+          <span class="popover__arrow"></span>
+          <div class="popover__content">
+            <div class="share">
+              <span class="share__label">Share</span>
+              <ul class="share__list">
+                <li class="share__item">
+                  <a class="share__link" href="#"><img src="./images/icon-facebook.svg" alt="Facebook icon">
+                  </a>
+                </li>
+                <li class="share__item">
+                  <a class="share__link" href="#"><img src="./images/icon-twitter.svg" alt="Twitter icon">
+                  </a>
+                </li>
+                <li class="share__item">
+                  <a class="share__link" href="#"><img src="./images/icon-pinterest.svg" alt="Pinterest icon">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
 </body>
+
 </html>
