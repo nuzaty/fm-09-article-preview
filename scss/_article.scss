@@ -23,8 +23,15 @@
     object-fit: cover;
   }
 
+  &__body {
+    @include from-tablet {
+      align-self: center;
+    }
+  }
+
+  $body-margin-inline: 1.875rem;
   &__content {
-    margin-inline: 1.875rem;
+    margin-inline: $body-margin-inline;
   }
 
   &__title {
@@ -43,7 +50,7 @@
 
   &__byline {
     display: flex;
-    margin-inline: 1.875rem;
+    margin-inline: $body-margin-inline;
     align-items: center;
     flex-wrap: wrap;
     row-gap: $space-200;
@@ -96,6 +103,24 @@
       svg {
         color: $color-white;
       }
+    }
+  }
+
+  /* =================================
+     Article share layout orchestration
+     ================================= */
+  .share--inline,
+  .popover {
+    display: none;
+  }
+
+  &.is-share-open {
+    .article__byline {
+      display: none;
+    }
+
+    .share--inline {
+      display: flex;
     }
   }
 }
