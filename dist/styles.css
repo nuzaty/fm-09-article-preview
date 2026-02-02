@@ -91,6 +91,8 @@ main {
 }
 .article__header {
   aspect-ratio: 327/200;
+  min-height: 8.75rem;
+  max-height: 13.75rem;
   overflow: hidden;
   margin-bottom: 2rem;
 }
