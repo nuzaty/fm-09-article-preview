@@ -1,7 +1,9 @@
 @use 'tokens' as *;
+@use 'media' as *;
 @use 'typography';
 
 .article {
+  background: $color-white;
   display: flex;
   flex-direction: column;
 
@@ -9,29 +11,54 @@
   border-radius: 10px;
   overflow: hidden;
 
+  @include from-tablet {
+    flex-direction: row;
+  }
+
   &__header {
+    flex: 0 0 auto;
     aspect-ratio: 327 / 200;
     min-height: 8.75rem;
     max-height: 13.75rem;
     overflow: hidden;
     margin-bottom: $space-400;
+
+    @include from-tablet {
+      aspect-ratio: 229 / 346;
+      margin-bottom: 0;
+      min-height: unset;
+      max-height: unset;
+      flex: 0 0 clamp(14.3125rem, 10.313rem + 8.333vw, 17.8125rem);
+    }
   }
 
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    // object-position: 50% 40%;
   }
 
   &__body {
+    /* safety net */
+    min-width: 0;
+
     @include from-tablet {
       align-self: center;
+      flex: 1 1 0;
     }
   }
 
-  $body-margin-inline: 1.875rem;
+  @mixin body-margin-inline {
+    margin-inline: 1.875rem;
+
+    @include from-tablet {
+      margin-inline: $space-400 2.25rem;
+    }
+  }
+
   &__content {
-    margin-inline: $body-margin-inline;
+    @include body-margin-inline;
   }
 
   &__title {
@@ -46,15 +73,20 @@
   }
 
   &__footer {
+    position: relative;
   }
 
   &__byline {
     display: flex;
-    margin-inline: $body-margin-inline;
+    @include body-margin-inline;
     align-items: center;
     flex-wrap: wrap;
     row-gap: $space-200;
     margin-block: $space-600 1.125rem;
+
+    @include from-tablet {
+      margin-block: $space-300 0;
+    }
   }
 
   &__byline-avatar {
@@ -81,8 +113,8 @@
   }
 
   &__byline-share-btn {
-    width: 2rem;
-    height: 2rem;
+    width: $share-button-size;
+    height: $share-button-size;
     background: $color-grey-200;
     border-radius: 50%;
     display: flex;
@@ -98,29 +130,41 @@
       color: $color-grey-500;
     }
 
-    &.is-active {
+    .article.is-share-active & {
       background: $color-grey-500;
       svg {
         color: $color-white;
       }
+    }
+
+    @include from-tablet {
+      /* Intentional value to match Figma layout */
+      margin-right: 0.3125rem;
     }
   }
 
   /* =================================
      Article share layout orchestration
      ================================= */
-  .share--inline,
-  .popover {
+  .share--inline {
     display: none;
   }
 
-  &.is-share-open {
+  &.is-share-active {
     .article__byline {
       display: none;
     }
-
     .share--inline {
       display: flex;
+    }
+
+    @include from-tablet {
+      .article__byline {
+        display: flex;
+      }
+      .share--inline {
+        display: none;
+      }
     }
   }
 }

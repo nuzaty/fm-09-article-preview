@@ -9,8 +9,6 @@ main {
 
   padding-inline: clamp(1rem, -1.909rem + 14.545vw, 1.5rem);
 
-  @extend .text-preset-2-medium;
-
   @include from-mobile {
     padding-inline: clamp(1.5rem, -1.84rem + 14.249vw, 5rem);
   }
@@ -18,4 +16,6 @@ main {
   @include from-tablet {
     padding-inline: clamp(5rem, -14.643rem + 40.923vw, 22.188rem);
   }
+
+  @extend .text-preset-2-medium;
 }

@@ -2,6 +2,7 @@
 /* fonts */
 /* spacing */
 /* breakpoints */
+/* share button */
 .text-preset-1, .article__title {
   font-family: "Manrope", sans-serif;
   font-size: 1.25rem;
@@ -62,7 +63,7 @@ ul {
 }
 
 body {
-  background: #ffffff;
+  background: #ecf2f8;
 }
 
 main {
@@ -83,26 +84,57 @@ main {
 }
 
 .article {
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 40px 40px 0px rgba(201, 213, 225, 0.503415);
   border-radius: 10px;
   overflow: hidden;
 }
+@media (min-width: 48rem) {
+  .article {
+    flex-direction: row;
+  }
+}
 .article__header {
+  flex: 0 0 auto;
   aspect-ratio: 327/200;
   min-height: 8.75rem;
   max-height: 13.75rem;
   overflow: hidden;
   margin-bottom: 2rem;
 }
+@media (min-width: 48rem) {
+  .article__header {
+    aspect-ratio: 229/346;
+    margin-bottom: 0;
+    min-height: unset;
+    max-height: unset;
+    flex: 0 0 clamp(14.3125rem, 10.313rem + 8.333vw, 17.8125rem);
+  }
+}
 .article__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.article__body {
+  /* safety net */
+  min-width: 0;
+}
+@media (min-width: 48rem) {
+  .article__body {
+    align-self: center;
+    flex: 1 1 0;
+  }
+}
 .article__content {
   margin-inline: 1.875rem;
+}
+@media (min-width: 48rem) {
+  .article__content {
+    margin-inline: 2rem 2.25rem;
+  }
 }
 .article__title {
   color: #48556a;
@@ -111,13 +143,28 @@ main {
 .article__description {
   color: #6e8098;
 }
+.article__footer {
+  position: relative;
+}
 .article__byline {
   display: flex;
   margin-inline: 1.875rem;
+}
+@media (min-width: 48rem) {
+  .article__byline {
+    margin-inline: 2rem 2.25rem;
+  }
+}
+.article__byline {
   align-items: center;
   flex-wrap: wrap;
   row-gap: 1rem;
   margin-block: 3rem 1.125rem;
+}
+@media (min-width: 48rem) {
+  .article__byline {
+    margin-block: 1.5rem 0;
+  }
 }
 .article__byline-avatar {
   width: 2.5rem;
@@ -153,26 +200,39 @@ main {
   margin-left: 0.0625rem;
   color: #6e8098;
 }
-.article__byline-share-btn.is-active {
+.article.is-share-active .article__byline-share-btn {
   background: #6e8098;
 }
-.article__byline-share-btn.is-active svg {
+.article.is-share-active .article__byline-share-btn svg {
   color: #ffffff;
+}
+@media (min-width: 48rem) {
+  .article__byline-share-btn {
+    /* Intentional value to match Figma layout */
+    margin-right: 0.3125rem;
+  }
 }
 .article {
   /* =================================
      Article share layout orchestration
      ================================= */
 }
-.article .share--inline,
-.article .popover {
+.article .share--inline {
   display: none;
 }
-.article.is-share-open .article__byline {
+.article.is-share-active .article__byline {
   display: none;
 }
-.article.is-share-open .share--inline {
+.article.is-share-active .share--inline {
   display: flex;
+}
+@media (min-width: 48rem) {
+  .article.is-share-active .article__byline {
+    display: flex;
+  }
+  .article.is-share-active .share--inline {
+    display: none;
+  }
 }
 
 .share {
@@ -183,7 +243,8 @@ main {
   row-gap: 1rem;
 }
 .share--inline {
-  padding: 1.5rem 1.875rem;
+  padding-block: 1.625rem 1.375rem;
+  padding-inline: 1.875rem;
   margin-top: 1.625rem;
 }
 .share__label {
@@ -200,6 +261,42 @@ main {
 }
 .share__item img {
   width: 1.25rem;
+}
+
+.popover {
+  display: none;
+}
+@media (min-width: 48rem) {
+  .popover.is-open {
+    display: flex;
+  }
+  .popover {
+    width: max-content;
+    position: fixed;
+    background: #48556a;
+    padding-block: 1.09375rem;
+    padding-inline: 2.40625rem;
+    box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+    border-radius: 10px;
+    top: var(--anchor-bottom);
+    left: var(--anchor-center-x);
+    /* spacing to share button = 10px + 12px = 1.375rem */
+    transform: translate(-50%, calc(-100% - 2rem - 1.375rem));
+  }
+  .popover__arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.75rem;
+    border-color: #48556a transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -0.5px);
+  }
+  .popover .share__list {
+    margin-right: 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

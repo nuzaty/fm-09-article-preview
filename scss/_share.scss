@@ -10,7 +10,8 @@
   row-gap: $space-200;
 
   &--inline {
-    padding: 1.5rem 1.875rem;
+    padding-block: 1.625rem 1.375rem;
+    padding-inline: 1.875rem;
     margin-top: 1.625rem;
   }
 
