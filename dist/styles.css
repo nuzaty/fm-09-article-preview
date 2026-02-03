@@ -3,28 +3,28 @@
 /* spacing */
 /* breakpoints */
 /* share button */
-.text-preset-1, .article__title {
+.article__title {
   font-family: "Manrope", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.0125em;
 }
-.text-preset-2-medium, .article__description, .article__byline-date, main {
+.article__description, .article__byline-date, main {
   font-family: "Manrope", sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.0012em;
 }
-.text-preset-2-bold, .article__byline-author {
+.article__byline-author {
   font-family: "Manrope", sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.0012em;
 }
-.text-preset-3, .share__label {
+.share__label {
   font-family: "Manrope", sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;

@@ -20,5 +20,5 @@ main {
     padding-inline: clamp(5rem, -14.643rem + 40.923vw, 22.188rem);
   }
 
-  @extend .text-preset-2-medium;
+  @extend %text-preset-2-medium;
 }

@@ -77,13 +77,13 @@
   }
 
   &__title {
-    @extend .text-preset-1;
+    @extend %text-preset-1;
     color: $color-grey-900;
     margin-bottom: $space-300;
   }
 
   &__description {
-    @extend .text-preset-2-medium;
+    @extend %text-preset-2-medium;
     color: $color-grey-500;
   }
 
@@ -118,12 +118,12 @@
   }
 
   &__byline-author {
-    @extend .text-preset-2-bold;
+    @extend %text-preset-2-bold;
     color: $color-grey-900;
   }
 
   &__byline-date {
-    @extend .text-preset-2-medium;
+    @extend %text-preset-2-medium;
     color: $color-grey-400;
   }
 
