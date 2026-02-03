@@ -34,7 +34,7 @@ Mobile
 
 ### CSS build
 
-Install globally (one-time):
+Install [Dart Sass](https://sass-lang.com/install/#install-standalone) or Sass (one-time):
 
 ```
 npm install -g sass
