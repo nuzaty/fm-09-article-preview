@@ -4,12 +4,22 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 
 ## Screenshot
 
-![](./screenshot.jpg)
+Desktop
+
+[<img src="./screenshot/desktop.webp" height="450"/>](./screenshot/desktop.webp)
+
+Tablet
+
+[<img src="./screenshot/tablet.webp" height="675"/>](./screenshot/tablet.webp)
+
+Mobile
+
+[<img src="./screenshot/mobile.webp" height="900"/>](./screenshot/mobile.webp)
 
 ## Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: [https://www.frontendmentor.io/solutions/article-preview-component-using-sass-Fzyw-xUUUm](https://www.frontendmentor.io/solutions/article-preview-component-using-sass-Fzyw-xUUUm)
+- Live Site URL: [https://nuzaty.github.io/fm-09-article-preview/](https://nuzaty.github.io/fm-09-article-preview/)
 
 ## My process
 
@@ -21,3 +31,24 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 - Mobile-first workflow
 - Sass (Dart Sass)
 - BEM
+-
+
+### CSS build
+
+Install globally (one-time):
+
+```
+npm install -g sass
+```
+
+Dev:
+
+```
+sass --watch scss:dist
+```
+
+Build:
+
+```
+sass scss:dist
+```
