@@ -4,17 +4,17 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 
 ## Screenshot
 
-Desktop
+Mobile
 
-![<img src="./screenshot/desktop.webp" height="450"/>](./screenshot/desktop.webp)
+![<img src="./screenshot/mobile.webp" height="900"/>](./screenshot/mobile.webp)
 
 Tablet
 
 ![<img src="./screenshot/tablet.webp" height="675"/>](./screenshot/tablet.webp)
 
-Mobile
+Desktop
 
-![<img src="./screenshot/mobile.webp" height="900"/>](./screenshot/mobile.webp)
+![<img src="./screenshot/desktop.webp" height="450"/>](./screenshot/desktop.webp)
 
 ## Links
 
@@ -27,6 +27,7 @@ Mobile
 
 - Semantic HTML5 markup
 - Flexbox
+- CSS Grid
 - Mobile-first workflow
 - Sass (Dart Sass)
 - BEM
