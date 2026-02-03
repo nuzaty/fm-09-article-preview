@@ -6,7 +6,10 @@ main {
   display: grid;
   place-items: center;
   min-height: 100vh;
+  margin-inline: auto;
+  max-width: $content-max-width;
 
+  padding-block: $space-200;
   padding-inline: clamp(1rem, -1.909rem + 14.545vw, 1.5rem);
 
   @include from-mobile {

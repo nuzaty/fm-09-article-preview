@@ -70,6 +70,9 @@ main {
   display: grid;
   place-items: center;
   min-height: 100vh;
+  margin-inline: auto;
+  max-width: 90rem;
+  padding-block: 1rem;
   padding-inline: clamp(1rem, -1.909rem + 14.545vw, 1.5rem);
 }
 @media (min-width: 23.4375rem) {
@@ -113,10 +116,21 @@ main {
     flex: 0 0 clamp(14.3125rem, 10.313rem + 8.333vw, 17.8125rem);
   }
 }
+@media (min-width: 64rem) {
+  .article__header {
+    aspect-ratio: 285/280;
+  }
+}
 .article__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (min-width: 64rem) {
+  .article__image {
+    /* Intentional value to match Figma layout */
+    object-position: 0% 50%;
+  }
 }
 .article__body {
   /* safety net */
@@ -128,12 +142,22 @@ main {
     flex: 1 1 0;
   }
 }
+@media (min-width: 48rem) {
+  .article__body {
+    padding-block: 1.5rem;
+  }
+}
 .article__content {
   margin-inline: 1.875rem;
 }
 @media (min-width: 48rem) {
   .article__content {
     margin-inline: 2rem 2.25rem;
+  }
+}
+@media (min-width: 64rem) {
+  .article__content {
+    margin-inline: 2.5rem;
   }
 }
 .article__title {
@@ -153,6 +177,11 @@ main {
 @media (min-width: 48rem) {
   .article__byline {
     margin-inline: 2rem 2.25rem;
+  }
+}
+@media (min-width: 64rem) {
+  .article__byline {
+    margin-inline: 2.5rem;
   }
 }
 .article__byline {
@@ -210,6 +239,12 @@ main {
   .article__byline-share-btn {
     /* Intentional value to match Figma layout */
     margin-right: 0.3125rem;
+  }
+}
+@media (min-width: 64rem) {
+  .article__byline-share-btn {
+    /* Intentional value to match Figma layout */
+    margin-right: 0.1875rem;
   }
 }
 .article {

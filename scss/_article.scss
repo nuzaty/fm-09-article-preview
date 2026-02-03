@@ -30,13 +30,20 @@
       max-height: unset;
       flex: 0 0 clamp(14.3125rem, 10.313rem + 8.333vw, 17.8125rem);
     }
+
+    @include from-desktop {
+      aspect-ratio: 285 / 280;
+    }
   }
 
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // object-position: 50% 40%;
+    @include from-desktop {
+      /* Intentional value to match Figma layout */
+      object-position: 0% 50%;
+    }
   }
 
   &__body {
@@ -47,6 +54,10 @@
       align-self: center;
       flex: 1 1 0;
     }
+
+    @include from-tablet {
+      padding-block: $space-300;
+    }
   }
 
   @mixin body-margin-inline {
@@ -54,6 +65,10 @@
 
     @include from-tablet {
       margin-inline: $space-400 2.25rem;
+    }
+
+    @include from-desktop {
+      margin-inline: $space-500;
     }
   }
 
@@ -140,6 +155,11 @@
     @include from-tablet {
       /* Intentional value to match Figma layout */
       margin-right: 0.3125rem;
+    }
+
+    @include from-desktop {
+      /* Intentional value to match Figma layout */
+      margin-right: 0.1875rem;
     }
   }
 
